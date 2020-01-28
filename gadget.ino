@@ -50,66 +50,7 @@ long prevNum = 0;
    lcd.print("Cases: null");
  }
 
- void loop() {
-
-
-   // wait for WiFi connection
-   if ((WiFiMulti.run() == WL_CONNECTED)) {
-
-     WiFiClient client;
-
-     HTTPClient http;
-
-     Serial.print("[HTTP] begin...\n");
-     if (http.begin(client, "http://serverIP:Port")) {  // HTTP
-
-
-       Serial.print("[HTTP] GET...\n");
-       // start connect
-#include <LiquidCrystal_I2C.h>
-
-LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 for a 16 chars and 2 line display
-
-
- #include <Arduino.h>
-
- #include <ESP8266WiFi.h>
- #include <ESP8266WiFiMulti.h>
-
- #include <ESP8266HTTPClient.h>
-
- #include <WiFiClient.h>
-
- ESP8266WiFiMulti WiFiMulti;
-long prevNum = 0;
- void setup() {
-
-   Serial.begin(115200);
-   // Serial.setDebugOutput(true);
-
-   Serial.println();
-   Serial.println();
-   Serial.println();
-
-   for (uint8_t t = 4; t > 0; t--) {
-     Serial.printf("[SETUP] WAIT %d...\n", t);
-     Serial.flush();
-     delay(1000);
-   }
-
-   WiFi.mode(WIFI_STA);
-   //Replace with your own information
-   WiFiMulti.addAP("SSID", "Password");
-   lcd.init();                      // initialize the lcd
-   // Print a message to the LCD.
-   lcd.backlight();
-   lcd.clear();
-   lcd.setCursor(0,0);
-   lcd.print("CORONA VIRUS COUNTER");
-   lcd.setCursor(4,2);
-   lcd.print("Cases: 2070");
- }
-
+ 
  void loop() {
 
 
@@ -122,9 +63,7 @@ long prevNum = 0;
 
      Serial.print("[HTTP] begin...\n");
      //Replace with your own information
-     if (http.begin(client, "http://Local_Server_IP:Port")) {  // HTTP
-
-ion and send HTTP header
+     if (http.begin(client, "http://Local_Server_IP:Port")) {  
        int httpCode = http.GET();
 
        // httpCode will be negative on error
