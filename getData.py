@@ -40,4 +40,4 @@ while True:
 
 	my_file.write("{0}".format(global_total + china_total))
 	my_file.close()
-	time.sleep(10)
+	time.sleep(120)
