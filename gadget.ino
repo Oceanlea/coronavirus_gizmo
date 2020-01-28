@@ -47,7 +47,7 @@ long prevNum = 0;
    lcd.setCursor(0,0);
    lcd.print("CORONA VIRUS COUNTER");
    lcd.setCursor(4,2);
-   lcd.print("Cases: 2070");
+   lcd.print("Cases: null");
  }
 
  void loop() {
